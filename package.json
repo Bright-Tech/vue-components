@@ -1,6 +1,6 @@
 {
     "name": "bright-vue-components",
-    "version": "0.1",
+    "version": "0.1.0",
     "description": "Vue components for Theme Inspina Admin",
     "author": "Bright-Tech",
     "private": false,
@@ -18,7 +18,7 @@
         "bootstrap-sass": "^3.3.7",
         "chosen-js": "^1.7.0",
         "font-awesome": "^4.6.1",
-        "jquery": "^3.1.1",
+        "jquery": "^3.1.1"
     },
     "repository": {
         "type": "git",
