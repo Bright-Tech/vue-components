@@ -57,7 +57,8 @@
                 this.$emit('goPage', {page: this.currentPage - 1});
             },
             clickNext: function () {
-                this.$emit('goPage', {page: this.currentPage + 1});
+                if(this.pageCount !==this.currentPage)
+                    this.$emit('goPage', {page: this.currentPage + 1});
             },
             goPage: function (page) {
                 this.$emit('goPage', {page: page});
@@ -71,26 +72,26 @@
             pages: function(){
                 let marginPages = 2;
                 let showMarginPageCount = 10;
-                let pages = [];
+                let page = [];
                 if (this.pageCount > 10) {
                     if (this.currentPage <= marginPages + 1) {
-                        pages = [1, 2, 3, 4, 5, -1];
+                        page = [1, 2, 3, 4, 5, -1];
                     } else if (this.currentPage >= this.pageCount - ( marginPages + 1)) {
-                        pages = [-1, this.pageCount - 4, this.pageCount - 3, this.pageCount - 2, this.pageCount - 1, this.pageCount];
+                        page = [-1, this.pageCount - 4, this.pageCount - 3, this.pageCount - 2, this.pageCount - 1, this.pageCount];
                     } else {
                         for (let i = this.currentPage - marginPages; i <= this.currentPage + marginPages; i++) {
-                            this.pages.push(i);
+                            page.push(i);
                         }
-                        pages.unshift(-1);
-                        pages.push(-1);
+                        page.unshift(-1);
+                        page.push(-1);
                     }
                 } else {
                     for (let i = 1; i <= this.pageCount; i++) {
-                        pages.push(i);
+                        page.push(i);
                     }
                 }
 
-                return pages;
+                return page;
             }
         }
     }
